@@ -1,0 +1,27 @@
+@startuml
+abstract class "Person" {
+  -String name
+  -String address
+  -String lastname
+  -String phone
+  -int age
+  +String getName()
+  #{abstract} void greetings()
+}
+
+class "Student" {
+  +CollegeCareer career
+  # void greetings()
+}
+
+class "Professor" {
+  # void greetings()
+}
+
+enum CollegeCareer
+
+Person <|-- Student
+Person <|-- Professor
+
+Student o-- CollegeCareer
+@enduml
